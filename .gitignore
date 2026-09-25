@@ -1,0 +1,12 @@
+.next/
+.vercel/
+node_modules/
+.pnpm-store/
+GLew18-workspace/
+out/
+dist/
+*.tsbuildinfo
+.DS_Store
+.env*
+!.env.example
+.vercel
