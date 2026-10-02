@@ -7,6 +7,7 @@ import { courses, student } from "@/lib/mock-data";
 import { CampusMark } from "./campus-mark";
 import { useDemo } from "./demo-provider";
 import { NotificationList } from "./notification-list";
+import { UiModeSwitch } from "./ui-mode-switch";
 import { SketchIcon, type SketchIconName } from "./ui/sketch-icon";
 
 const links: { href: string; label: string; icon: SketchIconName }[] = [
@@ -81,6 +82,7 @@ export function AppHeader() {
         })}
       </nav>
       <div className="header-tools">
+        <UiModeSwitch />
         <div className="global-search" onFocus={() => setSearchOpen(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setSearchOpen(false); }}>
           <label className="search-box"><SketchIcon name="search" size={14} /><input value={query} onChange={(event) => { setQuery(event.target.value); setSearchOpen(true); }} onKeyDown={(event) => { if (event.key === "Escape") setSearchOpen(false); if (event.key === "Enter" && searchResults[0]) { event.preventDefault(); router.push(searchResults[0].href); setQuery(""); setSearchOpen(false); } }} placeholder="Search Campus" aria-label="Search courses and assignments" role="combobox" aria-expanded={searchOpen && normalizedQuery.length >= 2} aria-controls="campus-search-results" autoComplete="off" /></label>
           {searchOpen && normalizedQuery.length >= 2 && <div className="search-results popover" id="campus-search-results" role="listbox">

@@ -2,11 +2,17 @@
 
 import { useDemo } from "@/components/demo-provider";
 import { SketchIcon } from "@/components/ui/sketch-icon";
+import { UiModeSwitch } from "@/components/ui-mode-switch";
 
 export default function SettingsPage() {
   const { resetDemo } = useDemo();
   return <main className="page-shell settings-page">
     <div className="page-heading"><div><p className="eyebrow">Campus</p><h1>Settings</h1><p className="page-subtitle">Manage this local prototype.</p></div></div>
+    <section className="content-card settings-card appearance-card">
+      <div className="settings-icon"><SketchIcon name="sliders" size={21} /></div>
+      <div><h2>Appearance</h2><p>Choose a playful sketch or a focused professional interface.</p></div>
+      <UiModeSwitch />
+    </section>
     <section className="content-card settings-card">
       <div className="settings-icon"><SketchIcon name="settings" size={21} /></div>
       <div><h2>Demo data</h2><p>Restore assignment states, notifications, and dashboard widgets to their original values.</p></div>
