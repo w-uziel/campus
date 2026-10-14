@@ -1,11 +1,11 @@
-# Campus Sketch Frontend Redesign
+# Schoology Sketch Frontend Redesign
 
 ## Overview
 
-- Redesign the complete Campus frontend as an original monochrome, hand-drawn student portal.
+- Redesign the complete Schoology frontend as an original monochrome, hand-drawn student portal.
 - Use dbrand Sketch 2D as the primary visual reference for doubled contours, marker lettering, hatch marks, and high-contrast black-and-white rendering.
-- Keep Campus dark-only and desktop-first, with intentional support beginning at a 1024px viewport.
-- Retain the Campus name while replacing the current geometric lime identity with a new hand-rendered mark and wordmark.
+- Keep Schoology dark-only and desktop-first, with intentional support beginning at a 1024px viewport.
+- Retain the Schoology name while replacing the current geometric lime identity with a new hand-rendered mark and wordmark.
 - Preserve all current routes, mock data, dashboard customization, local persistence, assignment state changes, notification state, calendar behavior, and simulated submissions.
 - Keep currently inert prototype affordances, including global search and the avatar control, unchanged functionally.
 - Remove course-color identity from the interface without introducing replacement colors, symbols, or patterns.
@@ -17,15 +17,15 @@
 
 ## Expected behavior
 
-- Campus opens to a redesigned monochrome dashboard on a near-black surface.
+- Schoology opens to a redesigned monochrome dashboard on a near-black surface.
 - The persistent top navigation keeps its current information architecture and route behavior.
-- The new Campus mark and wordmark remain recognizable at full header size and as a compact mark.
+- The new Schoology mark and wordmark remain recognizable at full header size and as a compact mark.
 - Cards, popovers, menus, inputs, buttons, tabs, tables, widgets, and status controls share the same hand-rendered construction.
 - Major surfaces use deliberately imperfect contours, repeated outline strokes, hatch details, and handwritten labels.
 - Body copy, assignment descriptions, dates, grade values, and dense table content remain conventionally typeset and easy to scan.
 - Hover, active, open, dragging, resizing, saving, and selection states use animated strokes or scribbled emphasis.
 - Dashboard widgets remain movable, hideable, addable, resizable, saveable, cancelable, and resettable.
-- Dashboard layout persistence continues to use the existing `campus-demo-v1` browser-storage state.
+- Dashboard layout persistence continues to use the existing `schoology-demo-v1` browser-storage state.
 - Assignment filters, status controls, detail views, mock attachments, and mock submission behavior remain unchanged.
 - Calendar month and week navigation continue to use the existing assignment and event data.
 - Notification read state remains synchronized between the header popover, dashboard strip, and notifications page.
@@ -45,7 +45,7 @@
 - Add a reusable background treatment for the chosen black surface, with any grain or distressed marks implemented as lightweight local SVG/CSS assets rather than remote dependencies.
 - Add desktop layout tokens for the 1024px minimum, content width, header height, gutters, widget grid, and wide-screen expansion.
 - Add shared motion definitions for draw-on strokes, scribble underlines, contour jitter, hover offsets, popover entrance, drag emphasis, and save confirmation.
-- Replace `public/campus-mark.svg` and `public/campus-logo.svg` with an original monochrome Campus mark and handwritten wordmark.
+- Replace `public/schoology-mark.svg` and `public/schoology-logo.svg` with an original monochrome Schoology mark and handwritten wordmark.
 - Add local font files under `public/fonts/` if the selected font license and implementation strategy require self-hosting.
 - Add reusable texture or construction assets under `public/sketch/`, including only original grain, hatch, underline, and contour artwork needed by the UI.
 - Create `components/ui/sketch-icon.tsx` as the typed entry point for the custom icon family.
@@ -86,7 +86,7 @@
 - **Phase 1 — Visual foundation and brand**
   - Resolve the remaining surface, layout, typography, and benchmark-screen decisions.
   - Define monochrome tokens, font loading, desktop metrics, sketch construction rules, and motion vocabulary.
-  - Replace the Campus mark and wordmark.
+  - Replace the Schoology mark and wordmark.
   - Build the shared sketch frame, button, form, status, and icon primitives.
   - Produce a small component showcase or benchmark screen to validate the system before broad rollout.
 - **Phase 2 — Application shell and dashboard benchmark**

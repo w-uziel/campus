@@ -1,16 +1,16 @@
-# Campus Schoology Reader — Privacy
+# Schoology Reader — Privacy
 
-Last updated October 6, 2026.
+Last updated October 14, 2026.
 
 ## Purpose and data used
 
-Campus Schoology Reader reads academic information from the Schoology account you are already signed into at heschel.schoology.com. Sync begins when you choose Sync academic data. Information can include your source account identifier, subjects and sections, material and folder names, assignment instructions and deadlines, reported grades and exceptions, grading periods and category weights, submission-status labels, academic comments, events, attachment names and source references, and capture/coverage information.
+Schoology Reader reads academic information from the Schoology account you are already signed into at heschel.schoology.com. Sync begins when you choose Sync academic data. Information can include your source account identifier, subjects and sections, material and folder names, assignment instructions and deadlines, reported grades and exceptions, grading periods and category weights, submission-status labels, academic comments, events, attachment names and source references, and capture/coverage information.
 
 The reader accesses only supported school academic pages and resources needed for these features, not your general browsing history. It uses the existing browser session for authenticated requests; it does not ask for your Schoology password or extract and store browser cookies. Raw response markup is parsed temporarily; normalized exports exclude scripts, hidden form inputs, session tokens and signed CDN URLs.
 
 ## Storage and exports
 
-Checkpoints and account-separated snapshots are stored locally in this extension's IndexedDB. They remain until extension data is removed or the extension is uninstalled. JSON export saves academic metadata only when you select Export JSON. You control the exported files and whether to import them into Campus. Campus stores deliberately imported data and separate local planning state in its own browser-origin storage.
+Checkpoints and account-separated snapshots are stored locally in this extension's IndexedDB. They remain until extension data is removed or the extension is uninstalled. JSON export saves academic metadata only when you select Export JSON. You control the exported files and whether to import them into Schoology. Schoology stores deliberately imported data and separate local planning state in its own browser-origin storage.
 
 Original PDFs download only when you select Download original PDFs and grant optional files-cdn.schoology.com access. The reader validates supported MIME/signature/end-marker checks, measures sizes, and computes SHA-256 hashes. Original files and a failure/integrity manifest are saved separately to your downloads. Signed redirect URLs are used transiently and are not saved in metadata. PDF text extraction and OCR are unavailable.
 
@@ -22,8 +22,8 @@ The use of information received through this extension is limited to providing i
 
 ## Controls and deletion
 
-You can cancel sync, retain its last checkpoint, restrict site access, or remove the extension through Chrome. Removing extension data does not delete files already saved in your Downloads folder or academic snapshots already imported into Campus. Delete those separately if desired. Returning to demo or Reset demo in Campus preserves saved Schoology data.
+You can cancel sync, retain its last checkpoint, restrict site access, or remove the extension through Chrome. Removing extension data does not delete files already saved in your Downloads folder or academic snapshots already imported into Schoology. Delete those separately if desired. Returning to demo or Reset demo in Schoology preserves saved Schoology data.
 
 ## Publisher contact
 
-For questions, use the publisher contact shown on the extension's Chrome Web Store listing. This extension is an independent Campus tool and is not affiliated with or endorsed by Schoology, PowerSchool or the school.
+For questions, use the publisher contact shown on the extension's Chrome Web Store listing. This extension is an independent Schoology tool and is not affiliated with or endorsed by Schoology, PowerSchool or the school.

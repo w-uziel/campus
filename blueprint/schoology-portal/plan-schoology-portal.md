@@ -1,8 +1,8 @@
-# Campus Schoology Wrapper
+# Schoology Portal
 
 ## Overview
 
-- Build a desktop-only student portal named Campus as a calmer interface over Schoology-shaped data.
+- Build a desktop-only student portal named Schoology as a calmer interface over Schoology-shaped data.
 - Start with realistic mock data while isolating all reads and mutations behind a typed service boundary.
 - Use Next.js App Router, React, TypeScript, Tailwind CSS, and editable shadcn/ui primitives.
 - Open directly into a sample student dashboard without authentication.
@@ -13,7 +13,7 @@
 
 ## Expected behavior
 
-- Campus opens on the sample student's dashboard.
+- Schoology opens on the sample student's dashboard.
 - The top navigation links to Dashboard, Courses, Assignments, Calendar, Grades, and Notifications.
 - Course-specific pages add contextual navigation for Overview, Materials, Assignments, Calendar, and Grades.
 - The default dashboard shows a notification strip, a large Courses widget, an Upcoming widget, and a Grades widget.

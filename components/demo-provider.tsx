@@ -1,5 +1,6 @@
 "use client";
 
+import { readStoredValue } from "@/lib/browser-storage";
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { assignments as seededAssignments, defaultWidgets, notifications as seededNotifications } from "@/lib/mock-data";
 import type { Assignment, AssignmentStatus, Notification, WidgetConfig } from "@/lib/types";
@@ -17,7 +18,7 @@ type DemoContextValue = {
 };
 
 const DemoContext = createContext<DemoContextValue | null>(null);
-const STORAGE_KEY = "campus-demo-v1";
+const STORAGE_KEY = "schoology-demo-v1";
 
 export function DemoProvider({ children }: { children: React.ReactNode }) {
   const [assignments, setAssignments] = useState(seededAssignments);
@@ -28,7 +29,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const task = window.setTimeout(() => {
       try {
-        const saved = localStorage.getItem(STORAGE_KEY);
+        const saved = readStoredValue(STORAGE_KEY);
         if (saved) {
           const state = JSON.parse(saved) as { assignments?: Assignment[]; notifications?: Notification[]; widgets?: WidgetConfig[] };
           if (state.assignments) setAssignments(state.assignments);

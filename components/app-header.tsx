@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { courses, student } from "@/lib/mock-data";
-import { CampusMark } from "./campus-mark";
 import { useDemo } from "./demo-provider";
 import { NotificationList } from "./notification-list";
 import { SketchIcon, type SketchIconName } from "./ui/sketch-icon";
@@ -58,9 +57,8 @@ export function AppHeader() {
 
   return (
     <header className="app-header">
-      <Link href="/" className="brand" aria-label="Campus home">
-        <CampusMark className="brand-mark" />
-        <span className="brand-copy"><strong>Campus</strong></span>
+      <Link href="/" className="brand" aria-label="Schoology home">
+        <span className="brand-copy"><strong>Schoology</strong></span>
       </Link>
       <nav className="primary-nav">
         <div className="nav-dropdown" ref={coursesRef} onMouseEnter={openCourses} onMouseLeave={closeCoursesSoon} onFocus={openCourses}>
@@ -82,8 +80,8 @@ export function AppHeader() {
       </nav>
       <div className="header-tools">
         <div className="global-search" onFocus={() => setSearchOpen(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setSearchOpen(false); }}>
-          <label className="search-box"><SketchIcon name="search" size={14} /><input value={query} onChange={(event) => { setQuery(event.target.value); setSearchOpen(true); }} onKeyDown={(event) => { if (event.key === "Escape") setSearchOpen(false); if (event.key === "Enter" && searchResults[0]) { event.preventDefault(); router.push(searchResults[0].href); setQuery(""); setSearchOpen(false); } }} placeholder="Search Campus" aria-label="Search courses and assignments" role="combobox" aria-expanded={searchOpen && normalizedQuery.length >= 2} aria-controls="campus-search-results" autoComplete="off" /></label>
-          {searchOpen && normalizedQuery.length >= 2 && <div className="search-results popover" id="campus-search-results" role="listbox">
+          <label className="search-box"><SketchIcon name="search" size={14} /><input value={query} onChange={(event) => { setQuery(event.target.value); setSearchOpen(true); }} onKeyDown={(event) => { if (event.key === "Escape") setSearchOpen(false); if (event.key === "Enter" && searchResults[0]) { event.preventDefault(); router.push(searchResults[0].href); setQuery(""); setSearchOpen(false); } }} placeholder="Search Schoology" aria-label="Search courses and assignments" role="combobox" aria-expanded={searchOpen && normalizedQuery.length >= 2} aria-controls="schoology-search-results" autoComplete="off" /></label>
+          {searchOpen && normalizedQuery.length >= 2 && <div className="search-results popover" id="schoology-search-results" role="listbox">
             <div className="search-results-heading">Search notes <span>{searchResults.length || "No"} match{searchResults.length === 1 ? "" : "es"}</span></div>
             {searchResults.map((result) => <Link key={result.id} href={result.href} role="option" aria-selected="false" className="search-result" onClick={() => { setQuery(""); setSearchOpen(false); }}><span className="search-result-kind">{result.kind}</span><span><strong>{result.title}</strong><small>{result.detail}</small></span><SketchIcon name="arrow-up-right" size={14} /></Link>)}
             {!searchResults.length && <div className="search-empty">Nothing in these notes. Try another word?</div>}

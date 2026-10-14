@@ -6,7 +6,7 @@ import { ChaosLayer } from "@/components/ui/chaos-layer";
 import { HoverNoteEffects } from "@/components/ui/hover-note-effects";
 
 export const metadata: Metadata = {
-  title: { default: "Campus", template: "%s · Campus" },
+  title: { default: "Schoology", template: "%s · Schoology" },
   description: "School, without the visual noise.",
 };
 
